@@ -27,6 +27,7 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap');
 
+  html { scroll-padding-top: 160px; }
   :root {
     --red: #FF0A0A;
     --red-light: #fff1f1;
@@ -151,7 +152,7 @@
     border-bottom: 1px solid var(--border);
     padding: 0 24px;
     position: sticky;
-    top: 62px;
+    top: 78px;
     z-index: 90;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   }
@@ -722,17 +723,17 @@
     }
 
     /* Controls */
-    .controls { padding: 0; top: 56px; }
+    .controls { padding: 0; top: 60px; }
     .search-row {
       flex-direction: column;
       align-items: stretch;
       gap: 6px;
-      padding: 8px 12px 0;
+      padding: 8px 12px 4px;
     }
-    .search-wrap { width: 100%; min-width: unset; flex: none; order: 0; }
-    input[type="text"] { font-size: 14px; }
-    .submit-btn { width: 100%; justify-content: center; font-size: 12px; padding: 8px 12px; order: 1; }
-    .filter-chips { gap: 4px; overflow-x: auto; flex-wrap: nowrap; padding: 0 12px 6px; order: 2; width: 100%; }
+    .search-wrap { flex: none; width: 100%; min-width: 0; order: 0; }
+    input[type="text"] { font-size: 14px; width: 100%; }
+    .submit-btn { display: none; }
+    .filter-chips { gap: 4px; overflow-x: auto; flex-wrap: nowrap; padding: 0 12px 8px; width: 100%; }
     .filter-chips::-webkit-scrollbar { display: none; }
     .filter-chip { font-size: 10.5px; padding: 4px 10px; flex-shrink: 0; white-space: nowrap; }
 
@@ -1088,7 +1089,6 @@
       <div class="filter-chip" data-type="vc">VC</div>
       <div class="filter-chip" data-type="women">Women</div>
       <div class="filter-chip" data-type="marketing">Marketing</div>
-      <div class="filter-chip" data-type="web3">Web3</div>
       <div class="filter-chip" data-type="legal">Legal</div>
       <div class="filter-chip" data-free data-free-val="drinks">🍹 Drinks</div>
       <div class="filter-chip" data-free data-free-val="food">🍽 Food</div>
@@ -1105,6 +1105,8 @@
   <div class="stat">🍽 <strong id="foodCount">0</strong> with food</div>
   <span class="stat-sep">·</span>
   <div class="stat">Free: <strong id="freeCount">0</strong></div>
+  <span class="stat-sep">·</span>
+  <button class="submit-btn" onclick="openModal('submit')" style="background:var(--red);border-color:var(--red);font-size:11px;padding:4px 10px;">+ Submit Event</button>
 </div>
 
 <div class="content" id="content">
@@ -2599,6 +2601,56 @@ const EVENTS = [
     notes: "Fintech showcase co-hosted during the Fintech Is Femme Leadership Summit. Focus on brand relevance in fintech. Networking with CMOs and senior leaders. Note: this registration does NOT include access to the full Summit.",
     rsvp: "https://luma.com/viylogy1?ref=yorkseed", status: "Approval Required"
   }
+  ,
+  {
+    id: 402,
+    name: "Lynx Fintech Summit 2026",
+    host: "Lynx Collective",
+    date: "2026-04-28", day: "Tue Apr 28", time: "TBD",
+    venue: "TBD", neighborhood: "Manhattan",
+    address: "New York, NY",
+    types: ["fintech","vc"], free: false, drinks: false, food: false,
+    ticket: "Paid",
+    notes: "Curated summit from Lynx Collective featuring a Fintech Startup Showcase with 3 of the most promising fintech startups in 2026. Founded by two 20-year veterans of the NYC startup ecosystem: Andrew Chang and Dorothy Chang (Venture Partner at Flybridge).",
+    rsvp: "https://luma.com/lynx-fintech-summit-2026?ref=yorkseed", status: "Open"
+  },
+  {
+    id: 403,
+    name: "Fintech Compliance Circle Launch Event",
+    host: "Fintech Compliance Chronicles",
+    date: "2026-04-28", day: "Tue Apr 28", time: "6:00 PM",
+    venue: "Midtown Manhattan", neighborhood: "Midtown",
+    address: "New York, NY",
+    types: ["fintech","legal"], free: true, drinks: false, food: false,
+    ticket: "Free",
+    notes: "From the people who brought you Fintech Compliance Chronicles — join them in Midtown Manhattan during New York Fintech Week to become part of the brand new Fintech Compliance Circle community launch.",
+    rsvp: "https://luma.com/r857o2ad?ref=yorkseed", status: "Open"
+  },
+  {
+    id: 404,
+    name: "Fintech Is Femme Leadership & Security Summit 2026 — Happy Hour Kickoff",
+    host: "Fintech Is Femme",
+    date: "2026-04-27", day: "Mon Apr 27", time: "6:00 PM",
+    venue: "TBD", neighborhood: "Manhattan",
+    address: "New York, NY",
+    types: ["fintech","women"], free: true, drinks: true, food: false,
+    ticket: "Free",
+    notes: "Gathering the visionaries behind the Fintech Is Femme Leadership & Security Summit 2026 for an exclusive evening of cocktails, conversations, and collaboration. Shaping the agenda and partnerships for the biggest event of New York Fintech Week 2026.",
+    rsvp: "https://luma.com/mixer2026?ref=yorkseed", status: "Open"
+  },
+  {
+    id: 405,
+    name: "Deep Tech/AI Startup Pitches and Investor Panels — #NYTechWeek",
+    host: "Wallet Max",
+    date: "2026-04-28", day: "Tue Apr 28", time: "5:00 PM",
+    venue: "TBD", neighborhood: "Midtown",
+    address: "New York, NY",
+    types: ["ai","vc"], free: false, drinks: false, food: false,
+    ticket: "Paid",
+    notes: "Deep Tech & AI startup pitch competition and investor panels during NY Tech Week. Wallet Max community of 2,000+ innovators and 60 partners. Live pitches, investor Q&A, and networking.",
+    rsvp: "https://www.eventbrite.com/e/deep-tech-ai-startup-pitches-investor-panels-nytechweek-event?ref=yorkseed", status: "Open"
+  }
+
 ];
 
 
