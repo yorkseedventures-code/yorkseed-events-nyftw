@@ -722,14 +722,19 @@
     }
 
     /* Controls */
-    .controls { padding: 0 12px; top: 56px; }
-    .search-row { gap: 8px; padding: 10px 0 0; flex-wrap: wrap; }
-    .search-wrap { min-width: 100%; order: -1; width: 100%; }
-    .search-row { padding: 10px 0; }
-    .filter-chips { gap: 4px; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 6px; width: 100%; }
+    .controls { padding: 0; top: 56px; }
+    .search-row {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 6px;
+      padding: 8px 12px 0;
+    }
+    .search-wrap { width: 100%; min-width: unset; flex: none; order: 0; }
+    input[type="text"] { font-size: 14px; }
+    .submit-btn { width: 100%; justify-content: center; font-size: 12px; padding: 8px 12px; order: 1; }
+    .filter-chips { gap: 4px; overflow-x: auto; flex-wrap: nowrap; padding: 0 12px 6px; order: 2; width: 100%; }
     .filter-chips::-webkit-scrollbar { display: none; }
-    .filter-chip { font-size: 10.5px; padding: 4px 10px; flex-shrink: 0; }
-    .submit-btn { font-size: 11px; padding: 6px 10px; flex-shrink: 0; }
+    .filter-chip { font-size: 10.5px; padding: 4px 10px; flex-shrink: 0; white-space: nowrap; }
 
     /* Day tabs */
     .day-tab { font-size: 11px; padding: 7px 10px 9px; }
