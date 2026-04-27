@@ -89,6 +89,26 @@
     padding: 4px 10px; border-radius: 20px; font-family: 'JetBrains Mono', monospace;
   }
 
+  /* LIVE VIEWER COUNTER */
+  .live-viewers-pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.85);
+    font-size: 11px; font-weight: 500; padding: 4px 10px;
+    border-radius: 20px; font-family: 'JetBrains Mono', monospace;
+    border: 1px solid rgba(255,255,255,0.15);
+    white-space: nowrap;
+  }
+  .live-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #22c55e;
+    animation: live-pulse 1.8s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes live-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.75); }
+  }
+
   /* HERO */
   .hero { background: var(--black); padding: 32px 24px 28px; border-bottom: 1px solid #1a1a1a; }
   .hero-title {
@@ -581,6 +601,10 @@
   <div class="header-right">
     <!-- join-btn class added so mobile CSS can hide it without hiding everything -->
     <a href="https://app.yorkseed.co?ref=yorkseed" target="_blank" rel="noopener" class="join-btn" style="display:inline-flex;align-items:center;gap:6px;background:var(--red);color:white;font-family:'Sora',sans-serif;font-size:11px;font-weight:600;padding:7px 14px;border-radius:6px;text-decoration:none;letter-spacing:0.02em;white-space:nowrap;">Join Yorkseed Connect ↗</a>
+    <div class="live-viewers-pill" id="liveViewersPill" style="display:none;">
+      <span class="live-dot"></span>
+      <span id="liveViewerCount">1</span> online
+    </div>
     <div class="event-count-pill" id="headerCount">— events</div>
   </div>
 </header>
@@ -1389,5 +1413,70 @@ function showSuccess(type) {
     </div>
   </div>
 </div>
+<!-- LIVE VIEWER TRACKER — Supabase Realtime Presence -->
+<!--
+  ═══════════════════════════════════════════════════════
+  SETUP (one-time, ~2 minutes):
+  1. Go to https://supabase.com and create a FREE project
+  2. In your project dashboard → Settings → API
+  3. Copy "Project URL" → paste into SUPABASE_URL below
+  4. Copy "anon / public" key → paste into SUPABASE_ANON_KEY below
+  5. In Supabase dashboard → Realtime → make sure it is ENABLED
+  That's it — no database tables needed, presence works out of the box.
+  ═══════════════════════════════════════════════════════
+-->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+(function () {
+
+  // ── PASTE YOUR CREDENTIALS HERE ──────────────────────
+  const SUPABASE_URL      = 'https://oborlogkzvfcrowezgcb.supabase.co';
+  const SUPABASE_ANON_KEY = 'sb_publishable_ko18CKHHoAarlOfXDc2dkA_UzFQrW3W';
+  // ─────────────────────────────────────────────────────
+
+  const pill    = document.getElementById('liveViewersPill');
+  const countEl = document.getElementById('liveViewerCount');
+
+  function setCount(n) {
+    if (!pill || !countEl) return;
+    countEl.textContent = n;
+    pill.style.display  = 'inline-flex';
+  }
+
+  // If credentials not filled in yet, show nothing
+  if (SUPABASE_URL === 'YOUR_SUPABASE_URL') {
+    console.info('[LiveViewers] Add your Supabase credentials to enable the live counter.');
+    return;
+  }
+
+  try {
+    const client  = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const myId    = crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2);
+    const channel = client.channel('yorkseed-nyftw-live', {
+      config: { presence: { key: myId } }
+    });
+
+    channel
+      .on('presence', { event: 'sync' }, () => {
+        const state = channel.presenceState();
+        setCount(Object.keys(state).length);
+      })
+      .subscribe(async (status) => {
+        if (status === 'SUBSCRIBED') {
+          await channel.track({ joined_at: Date.now() });
+        }
+      });
+
+    // Clean up when tab closes
+    window.addEventListener('beforeunload', () => {
+      channel.untrack();
+    });
+
+  } catch (err) {
+    console.warn('[LiveViewers] Could not connect:', err);
+  }
+
+})();
+</script>
 </body>
 </html>
