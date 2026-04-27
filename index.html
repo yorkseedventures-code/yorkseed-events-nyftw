@@ -1059,20 +1059,12 @@ function buildDayTabs() {
     tab.className = 'day-tab' + (d.date === 'all' ? ' active' : '');
     tab.dataset.date = d.date;
     tab.innerHTML = `${d.label} <span class="count">${count}</span>`;
-tab.addEventListener('click', () => {
-  activeDay = d.date;
-  document.querySelectorAll('.day-tab').forEach(t => t.classList.remove('active'));
-  tab.classList.add('active');
-  tab.scrollIntoView({ inline: 'nearest', block: 'nearest' });
-  render();
-  // Scroll so sticky controls (search bar) sit right at top of viewport
-  requestAnimationFrame(() => {
-    const header = document.querySelector('.header');
-    const headerBottom = header ? header.getBoundingClientRect().bottom + window.scrollY : 0;
-    window.scrollTo({ top: headerBottom, behavior: 'smooth' });
-  });
-});
-});
+    tab.addEventListener('click', () => {
+      activeDay = d.date;
+      document.querySelectorAll('.day-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      render();
+    });
     tabs.appendChild(tab);
   });
 }
