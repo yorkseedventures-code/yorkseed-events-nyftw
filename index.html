@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,9 +9,6 @@
 <meta name="copyright" content="© 2026 Yorkseed. All rights reserved. nyftw.yorkseed.co">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://nyftw.yorkseed.co">
-
-<!-- Open Graph -->
-
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nyftw.yorkseed.co">
 <meta property="og:title" content="Yorkseed — New York Fintech Week 2026 Master Side Event List">
@@ -21,19 +17,14 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="Yorkseed">
-
-<!-- Twitter / X -->
-
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@Yorkseed">
 <meta name="twitter:title" content="Yorkseed — New York Fintech Week 2026 Master Side Event List">
 <meta name="twitter:description" content="115+ events across Fintech, AI & Tech, Web3, VC, and Marketing. Updated daily.">
 <meta name="twitter:image" content="https://nyftw.yorkseed.co/og-image.png">
-
 <style>
 /*! © 2026 Yorkseed — nyftw.yorkseed.co — All rights reserved. Unauthorised copying prohibited. */
   @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap');
-
   html { scroll-padding-top: 160px; }
   :root {
     --red: #FF0A0A;
@@ -53,37 +44,20 @@
     --shadow: 0 2px 12px rgba(0,0,0,0.07);
     --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: 'Sora', sans-serif;
-    background: #fafafa;
-    color: var(--black);
-    min-height: 100vh;
-  }
-
-  /* STICKY CONTROLS WRAPPER */
- .sticky-controls-wrap {
-  position: sticky;
-  top: var(--header-height, 48px);
+  body { font-family: 'Sora', sans-serif; background: #fafafa; color: var(--black); min-height: 100vh; }
+  .sticky-controls-wrap {
+    position: sticky;
+    top: var(--header-height, 48px);
     z-index: 89;
     background: white;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   }
-
-  /* HEADER */
   .header {
-    background: var(--black);
-    padding: 10px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 2px solid var(--red);
-    isolation: isolate;
+    background: var(--black); padding: 10px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+    border-bottom: 2px solid var(--red); isolation: isolate;
   }
   .logo { display: flex; align-items: center; gap: 10px; }
   .header-right { display: flex; align-items: center; gap: 12px; }
@@ -91,15 +65,12 @@
     background: var(--red); color: white; font-size: 11px; font-weight: 600;
     padding: 4px 10px; border-radius: 20px; font-family: 'JetBrains Mono', monospace;
   }
-
-  /* LIVE VIEWER COUNTER */
   .live-viewers-pill {
     display: inline-flex; align-items: center; gap: 5px;
     background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.85);
     font-size: 11px; font-weight: 500; padding: 4px 10px;
     border-radius: 20px; font-family: 'JetBrains Mono', monospace;
-    border: 1px solid rgba(255,255,255,0.15);
-    white-space: nowrap;
+    border: 1px solid rgba(255,255,255,0.15); white-space: nowrap;
   }
   .live-dot {
     width: 6px; height: 6px; border-radius: 50%;
@@ -111,8 +82,6 @@
     0%, 100% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.4; transform: scale(0.75); }
   }
-
-  /* HERO */
   .hero { background: var(--black); padding: 32px 24px 28px; border-bottom: 1px solid #1a1a1a; }
   .hero-title {
     font-family: 'Instrument Serif', serif;
@@ -126,12 +95,9 @@
     letter-spacing: 0.08em; text-transform: uppercase;
     border: 1px solid rgba(255,255,255,0.12); padding: 4px 10px; border-radius: 4px;
   }
-
-  /* CONTROLS */
   .controls {
     background: white; border-bottom: 1px solid var(--border);
-    padding: 0 24px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 0 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   }
   .search-row {
     display: flex; align-items: center; gap: 12px;
@@ -150,7 +116,6 @@
   }
   input[type="text"]:focus { border-color: var(--red); background: white; }
   input[type="text"]::placeholder { color: var(--gray-300); }
-
   .filter-chips { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
   .filter-chip {
     padding: 5px 12px; border-radius: 20px; font-size: 11.5px; font-weight: 500;
@@ -159,8 +124,6 @@
   }
   .filter-chip:hover { border-color: var(--red); color: var(--red); }
   .filter-chip.active { background: var(--red); border-color: var(--red); color: white; }
-
-  /* DAY TABS */
   .day-tabs {
     display: flex; gap: 0; overflow-x: auto; scrollbar-width: none;
     padding: 10px 0 0; border-top: 1px solid var(--border); margin-top: 12px;
@@ -179,8 +142,6 @@
     padding: 1px 6px; border-radius: 10px; margin-left: 4px;
   }
   .day-tab.active .count { background: var(--red-light); color: var(--red); }
-
-  /* STATS BAR */
   .stats-bar {
     background: var(--red-light); border-bottom: 1px solid var(--red-mid);
     padding: 8px 24px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
@@ -188,11 +149,7 @@
   .stat { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--gray-500); }
   .stat strong { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--red-dark); font-weight: 600; }
   .stat-sep { color: var(--red-mid); font-size: 16px; }
-
-  /* MAIN CONTENT */
   .content { max-width: 900px; margin: 0 auto; padding: 24px 20px 60px; }
-
-  /* DAY GROUP */
   .day-group { margin-bottom: 32px; }
   .day-header {
     display: flex; align-items: baseline; gap: 12px;
@@ -201,8 +158,6 @@
   .day-label { font-family: 'Instrument Serif', serif; font-size: 22px; color: var(--black); }
   .day-date { font-size: 12px; color: var(--gray-300); font-weight: 400; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.05em; }
   .day-event-count { margin-left: auto; font-size: 11px; color: var(--gray-300); font-family: 'JetBrains Mono', monospace; }
-
-  /* EVENT CARD */
   .event-card {
     background: white; border: 1.5px solid var(--border); border-radius: 10px;
     margin-bottom: 8px; overflow: hidden; transition: all 0.18s; cursor: pointer;
@@ -240,13 +195,10 @@
   .tag-food { background: #f3e0ff; color: #6b35a8; }
   .tag-invite { background: #fffbe8; color: #8a6800; }
   .tag-paid { background: #fef0f0; color: #cc0000; }
-
   .event-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; min-width: 90px; }
   .event-venue-short { font-size: 11px; color: var(--gray-300); text-align: right; line-height: 1.3; }
   .chevron { color: var(--gray-300); font-size: 12px; transition: transform 0.2s; }
   .event-card.expanded .chevron { transform: rotate(180deg); color: var(--red); }
-
-  /* EXPANDED DETAIL */
   .event-detail { display: none; padding: 0 14px 14px; border-top: 1px solid var(--border); }
   .event-card.expanded .event-detail { display: block; }
   .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; margin-bottom: 12px; padding-top: 12px; }
@@ -260,7 +212,6 @@
     padding: 10px 12px; background: var(--gray-100); border-radius: 6px;
     margin-bottom: 10px; font-style: italic;
   }
-  /* FIX 2: rsvp row with update button */
   .rsvp-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
   .rsvp-btn {
     display: inline-flex; align-items: center; gap: 6px; background: var(--red);
@@ -270,7 +221,6 @@
   }
   .rsvp-btn:hover { background: var(--red-dark); }
   .rsvp-btn.disabled { background: var(--gray-300); pointer-events: none; }
-  /* FIX 2: Update button on each card */
   .update-event-btn {
     display: inline-flex; align-items: center; gap: 5px; background: transparent;
     color: #888; font-size: 11px; font-weight: 500; padding: 6px 11px;
@@ -279,26 +229,18 @@
     -webkit-tap-highlight-color: transparent;
   }
   .update-event-btn:hover { border-color: var(--red); color: var(--red); background: var(--red-light); }
-
-  /* Public update notice in modal */
   .public-update-notice {
     background: #fffbe8; border: 1px solid #e8d040; border-radius: 7px;
     padding: 10px 13px; font-size: 12px; color: #7a5800; line-height: 1.5; margin-bottom: 14px;
   }
-
-  /* EMPTY STATE */
   .empty-state { text-align: center; padding: 60px 20px; color: var(--gray-300); display: none; }
   .empty-state.visible { display: block; }
   .empty-state h3 { font-size: 18px; margin-bottom: 8px; color: var(--gray-500); }
-
-  /* FOOTER */
   .footer {
     text-align: center; padding: 20px; font-size: 11px; color: var(--gray-300);
     border-top: 1px solid var(--border); background: white;
   }
   .footer strong { color: var(--red); }
-
-  /* SUBMIT EVENT BUTTON */
   .submit-btn {
     display: inline-flex; align-items: center; gap: 6px;
     background: var(--black); color: white;
@@ -307,16 +249,7 @@
     border: 1.5px solid rgba(255,255,255,0.15); transition: all 0.15s; white-space: nowrap;
   }
   .submit-btn:hover { background: #222; border-color: var(--red); }
-
-  /* ════════════════════════════════════════════════════════
-     YORKSEED PATCH v2.1 — Mobile + Security fixes
-     © 2026 Yorkseed · nyftw.yorkseed.co
-     ════════════════════════════════════════════════════════ */
-
-  /* FIX 1: Mobile FAB */
   .mobile-fab { display: none; }
-
-  /* MODAL */
   .modal-overlay {
     display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75);
     z-index: 999; align-items: center; justify-content: center; padding: 20px;
@@ -390,8 +323,6 @@
   .verify-badge.checking { background: #fff8e0; color: #8a6000; }
   .verify-badge.valid { background: #e8fff0; color: #1a7a40; }
   .verify-badge.invalid { background: #fff0f0; color: #cc0000; }
-
-  /* EMAIL GATE */
   .email-gate-overlay {
     display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.82);
     z-index: 998; align-items: center; justify-content: center; padding: 20px;
@@ -435,14 +366,8 @@
     font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px;
     margin-bottom: 14px; letter-spacing: 0.04em;
   }
-
-  /* ── TABLET ── */
-  /* Hide join btn on smaller screens — keeps header clean */
   @media (max-width: 900px) {
     .header-right .join-btn { display: none !important; }
-  }
-
-  @media (max-width: 900px) {
     .content { max-width: 100%; padding: 20px 16px 60px; }
     .hero { padding: 24px 20px; }
     .hero-title { font-size: 32px; }
@@ -450,49 +375,32 @@
     .stats-bar { padding: 8px 16px; gap: 12px; }
     .detail-grid { grid-template-columns: 1fr 1fr; }
   }
-
-  /* ── MOBILE ── */
   @media (max-width: 600px) {
-    /* Header */
     .header { padding: 12px 14px; gap: 8px; }
     .header img { height: 36px !important; }
     .header-right { gap: 6px; }
-    /* FIX 1: hide join btn but NOT submit btn */
     .header-right .join-btn { display: none !important; }
     .event-count-pill { font-size: 10px; padding: 3px 8px; }
     .live-viewers-pill { display: inline-flex !important; font-size: 10px; padding: 3px 8px; gap: 4px; }
-
-    /* Hero */
     .hero { padding: 18px 14px 20px; }
     .hero-title { font-size: clamp(22px, 7vw, 32px); }
     .hero-meta { gap: 6px; margin-top: 10px; }
     .hero-tag { font-size: 10px; padding: 3px 8px; }
-
-    /* FIX 3: Controls + Search not cut off */
     .controls { padding: 0; top: 60px; overflow: hidden; }
     .search-row {
-      flex-direction: column !important;
-      align-items: stretch !important;
-      gap: 6px !important;
-      padding: 8px 12px 4px !important;
-      width: 100% !important;
-      box-sizing: border-box !important;
+      flex-direction: column !important; align-items: stretch !important;
+      gap: 6px !important; padding: 8px 12px 4px !important;
+      width: 100% !important; box-sizing: border-box !important;
     }
     .search-wrap {
-      flex: none !important;
-      width: 100% !important;
-      min-width: 0 !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      order: 0 !important;
+      flex: none !important; width: 100% !important; min-width: 0 !important;
+      max-width: 100% !important; box-sizing: border-box !important; order: 0 !important;
     }
     input[type="text"] {
-      font-size: 16px !important; /* prevents iOS auto-zoom layout shift */
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
+      font-size: 16px !important; width: 100% !important;
+      max-width: 100% !important; box-sizing: border-box !important;
     }
-    .submit-btn { display: none; } /* hide desktop submit btn in search row */
+    .submit-btn { display: none; }
     .filter-chips {
       gap: 4px; overflow-x: auto; flex-wrap: nowrap !important;
       padding: 0 12px 8px; width: 100%; box-sizing: border-box;
@@ -500,33 +408,22 @@
     }
     .filter-chips::-webkit-scrollbar { display: none; }
     .filter-chip { font-size: 10.5px; padding: 4px 10px; flex-shrink: 0; white-space: nowrap; }
-
-    /* Day tabs */
     .day-tab { font-size: 11px; padding: 7px 10px 9px; }
-
-    /* Stats bar */
     .stats-bar {
       padding: 6px 12px; gap: 8px; flex-wrap: nowrap;
       overflow-x: auto; -webkit-overflow-scrolling: touch;
     }
     .stats-bar::-webkit-scrollbar { display: none; }
-    /* FIX 1b: Show submit btn in stats bar on mobile */
     .stats-bar .submit-btn {
-      display: inline-flex !important;
-      font-size: 10px !important;
-      padding: 4px 10px !important;
-      flex-shrink: 0;
+      display: inline-flex !important; font-size: 10px !important;
+      padding: 4px 10px !important; flex-shrink: 0;
     }
     .stat { font-size: 11px; white-space: nowrap; }
     .stat strong { font-size: 12px; }
     .stat-sep { display: none; }
-
-    /* Content */
     .content { padding: 14px 10px 80px; }
     .day-label { font-size: 18px; }
     .day-date { font-size: 10px; }
-
-    /* Event cards */
     .event-main { padding: 10px 12px; gap: 8px; }
     .event-time-col { min-width: 56px; font-size: 10px; }
     .event-name { font-size: 13px; }
@@ -534,78 +431,49 @@
     .tag { font-size: 9.5px; padding: 2px 6px; }
     .event-right { min-width: 50px; }
     .event-venue-short { font-size: 10px; }
-
-    /* Expanded detail */
     .detail-grid { grid-template-columns: 1fr; gap: 8px; }
     .detail-item p { font-size: 12px; }
     .event-notes { font-size: 12px; }
     .event-detail { padding: 0 12px 12px; }
     .rsvp-row { flex-direction: column; align-items: flex-start; gap: 6px; }
-
-    /* Modals */
     .modal { border-radius: 10px; }
     .modal-header { padding: 14px 16px 12px; }
     .modal-body { padding: 14px 16px 18px; }
     .form-row { grid-template-columns: 1fr; gap: 10px; }
     .email-gate-box { padding: 24px 20px; }
     .email-gate-box h2 { font-size: 18px; }
-
-    /* FIX 1: Mobile FAB */
     .mobile-fab {
-      display: flex !important;
-      position: fixed;
-      bottom: 20px;
-      right: 16px;
-      z-index: 500;
-      width: 54px;
-      height: 54px;
-      background: var(--red);
-      color: white;
-      border-radius: 50%;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      line-height: 1;
+      display: flex !important; position: fixed; bottom: 20px; right: 16px; z-index: 500;
+      width: 54px; height: 54px; background: var(--red); color: white; border-radius: 50%;
+      align-items: center; justify-content: center; font-size: 26px; line-height: 1;
       box-shadow: 0 4px 20px rgba(255,10,10,0.5), 0 2px 6px rgba(0,0,0,0.25);
-      cursor: pointer;
-      border: none;
-      transition: transform 0.15s, box-shadow 0.15s;
+      cursor: pointer; border: none; transition: transform 0.15s, box-shadow 0.15s;
       -webkit-tap-highlight-color: transparent;
     }
-    .mobile-fab:active {
-      transform: scale(0.92);
-      box-shadow: 0 2px 10px rgba(255,10,10,0.4);
-    }
+    .mobile-fab:active { transform: scale(0.92); box-shadow: 0 2px 10px rgba(255,10,10,0.4); }
   }
-
-  /* ── SMALL MOBILE ── */
   @media (max-width: 380px) {
     .hero-title { font-size: 20px; }
     .header img { height: 30px !important; }
     .filter-chip { font-size: 10px; padding: 3px 8px; }
   }
 </style>
-
 </head>
 <body>
-
-<!-- FIX 4: Hidden brand watermark (non-removable content anchor) -->
-
 <div aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none;" data-ys="yorkseed-nyftw-2026" data-author="Jessica Sophia Wong" data-contact="partnership@yorkseed.co">Yorkseed New York Fintech Week 2026 Master Side Event List — © 2026 Yorkseed. All rights reserved. nyftw.yorkseed.co</div>
 
 <header class="header">
   <div class="logo">
     <svg width="110" height="28" viewBox="0 0 110 28" xmlns="http://www.w3.org/2000/svg" style="display:block;flex-shrink:0;">
-  <rect x="0" y="3" width="4" height="22" fill="#FF0A0A"/>
-  <text x="10" y="20" font-family="Arial Black,Arial,sans-serif" font-size="15" font-weight="900" fill="white" letter-spacing="0.5">YORKSEED</text>
-</svg>
+      <rect x="0" y="3" width="4" height="22" fill="#FF0A0A"/>
+      <text x="10" y="20" font-family="Arial Black,Arial,sans-serif" font-size="15" font-weight="900" fill="white" letter-spacing="0.5">YORKSEED</text>
+    </svg>
     <div style="margin-left:14px;">
       <div style="color:white;font-family:'Sora',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.01em;line-height:1.25;">New York Fintech Week</div>
       <div style="color:var(--red);font-family:'Sora',sans-serif;font-size:9.5px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;margin-top:3px;">2026 Master Side Event List</div>
     </div>
   </div>
   <div class="header-right">
-    <!-- join-btn class added so mobile CSS can hide it without hiding everything -->
     <a href="https://app.yorkseed.co?ref=yorkseed" target="_blank" rel="noopener" class="join-btn" style="display:inline-flex;align-items:center;gap:6px;background:var(--red);color:white;font-family:'Sora',sans-serif;font-size:11px;font-weight:600;padding:7px 14px;border-radius:6px;text-decoration:none;letter-spacing:0.02em;white-space:nowrap;">Join Yorkseed Connect ↗</a>
     <div class="live-viewers-pill" id="liveViewersPill" style="display:inline-flex;">
       <span class="live-dot"></span>
@@ -614,8 +482,6 @@
     <div class="event-count-pill" id="headerCount">— events</div>
   </div>
 </header>
-
-<!-- FIX 1: Mobile FAB — floating "+" button for submitting events on mobile -->
 
 <button class="mobile-fab" onclick="openModal('submit')" aria-label="Submit an event">+</button>
 
@@ -635,7 +501,7 @@
           The <strong style="color:white;">original viral Conference Spreadsheet since 2023</strong> — now updated! Tech, founder, and investor events you can access without a badge. Updated daily. Find us on social <strong style="color:var(--red);">@Yorkseed</strong>
         </p>
         <p style="color:rgba(255,255,255,0.6);font-family:'Sora',sans-serif;font-size:12.5px;line-height:1.65;margin:0 0 14px 0;">
-          I'm <strong style="color:white;">Jessica Sophia Wong</strong>, founder of Yorkseed. If you're hosting a venture-driven event, I'd love to know — connect with me via one of the Yorkseed hub or email <a href="mailto:partnership@yorkseed.co" style="color:var(--red);text-decoration:none;">partnership@yorkseed.co</a>
+          I'm <strong style="color:white;">Jessica Sophia Wong</strong>, founder of Yorkseed. If you're hosting a venture-driven event, I'd love to know — connect with me via one of the Yorkseed hubs or email <a href="mailto:partnership@yorkseed.co" style="color:var(--red);text-decoration:none;">partnership@yorkseed.co</a>
         </p>
         <div style="background:rgba(255,10,10,0.08);border:1px solid rgba(255,10,10,0.2);border-radius:10px;padding:14px 16px;">
           <div style="color:var(--red);font-family:'Sora',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">Yorkseed Connect — app.yorkseed.co</div>
@@ -659,85 +525,71 @@
   </div>
 </div>
 
-<!-- YORKSEED INFO PANEL -->
-
+<!-- YORKSEED INFO PANEL — links grid only, no duplicate intro -->
 <div style="background:white;border-bottom:1px solid #e8e8e8;">
-  <div style="max-width:900px;margin:0 auto;padding:28px 20px;">
-
-```
-<!-- Founder intro row -->
-<div style="display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid #f0f0f0;">
-  <div style="flex:1;min-width:280px;">
-    <div style="font-family:'Instrument Serif',serif;font-size:20px;color:#0a0a0a;margin-bottom:6px;">Hi, I'm Jessica Sophia Wong</div>
-    <div style="font-family:'Sora',sans-serif;font-size:13px;color:#555;line-height:1.6;margin-bottom:10px;">Founder of Yorkseed. If you're hosting a venture-driven event, I'd love to know — connect with me via my hub or email <a href="mailto:partnership@yorkseed.co" style="color:var(--red);text-decoration:none;font-weight:500;">partnership@yorkseed.co</a></div>
-    <div style="font-family:'Sora',sans-serif;font-size:12.5px;color:#777;line-height:1.6;">The original viral Conference Spreadsheet since 2023 — now updated! Tech, founder, and investor events you can access without a badge. Updated daily. Find us on social <strong style="color:#0a0a0a;">@Yorkseed</strong></div>
-  </div>
-  <div style="display:flex;flex-direction:column;gap:8px;min-width:200px;">
-    <a href="https://app.yorkseed.co?ref=yorkseed" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:10px;background:#FF0A0A;color:white;font-family:'Sora',sans-serif;font-size:12px;font-weight:600;padding:9px 14px;border-radius:7px;text-decoration:none;">
-      <span>Yorkseed Connect</span><span style="opacity:0.8;font-size:11px;">Sign Up ↗</span>
-    </a>
-    <a href="https://yorkseed.co?ref=yorkseed" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:10px;background:#0a0a0a;color:white;font-family:'Sora',sans-serif;font-size:12px;font-weight:500;padding:9px 14px;border-radius:7px;text-decoration:none;">
-      <span>Our Story</span><span style="opacity:0.6;font-size:11px;">Read ↗</span>
-    </a>
-  </div>
-</div>
-
-<!-- Links grid -->
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;">
-  <a href="https://luma.com/Yorkseed?ref=yorkseed" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid #e8e8e8;border-radius:8px;text-decoration:none;" onmouseover="this.style.borderColor='#FF0A0A'" onmouseout="this.style.borderColor='#e8e8e8'">
-    <div style="width:8px;height:8px;border-radius:50%;background:#FF0A0A;margin-top:4px;flex-shrink:0;"></div>
-    <div><div style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#0a0a0a;">Global Event Calendar</div><div style="font-family:'Sora',sans-serif;font-size:11px;color:#888;margin-top:2px;">Subscribe to curated venture events worldwide — weekly for founders &amp; investors</div></div>
-  </a>
-  <a href="https://yorkseed.co/#about?ref=yorkseed" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid #e8e8e8;border-radius:8px;text-decoration:none;" onmouseover="this.style.borderColor='#FF0A0A'" onmouseout="this.style.borderColor='#e8e8e8'">
-    <div style="width:8px;height:8px;border-radius:50%;background:#FF0A0A;margin-top:4px;flex-shrink:0;"></div>
-    <div><div style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#0a0a0a;">City &amp; Conference Hubs</div><div style="font-family:'Sora',sans-serif;font-size:11px;color:#888;margin-top:2px;">Apply to access 30+ local city hubs and conference hubs</div></div>
-  </a>
-  <a href="https://whatsapp.com/channel/0029Vaf0wiU3wtbBcxTEFD0h" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid #e8e8e8;border-radius:8px;text-decoration:none;" onmouseover="this.style.borderColor='#FF0A0A'" onmouseout="this.style.borderColor='#e8e8e8'">
-    <div style="width:8px;height:8px;border-radius:50%;background:#25D366;margin-top:4px;flex-shrink:0;"></div>
-    <div><div style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#0a0a0a;">WhatsApp Public Channel</div><div style="font-family:'Sora',sans-serif;font-size:11px;color:#888;margin-top:2px;">Follow Yorkseed's public channel for updates</div></div>
-  </a>
-  <a href="https://chat.whatsapp.com/LZJ8xFczveoJats028rGir" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid #e8e8e8;border-radius:8px;text-decoration:none;" onmouseover="this.style.borderColor='#FF0A0A'" onmouseout="this.style.borderColor='#e8e8e8'">
-    <div style="width:8px;height:8px;border-radius:50%;background:#25D366;margin-top:4px;flex-shrink:0;"></div>
-    <div><div style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#0a0a0a;">Yorkseed NYC Hub — NYFTW</div><div style="font-family:'Sora',sans-serif;font-size:11px;color:#888;margin-top:2px;">Join our NYC Hub, open as a conference hub for the week</div></div>
-  </a>
-  <a href="https://yorkseed.beehiiv.com/subscribe?ref=yorkseed" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid #e8e8e8;border-radius:8px;text-decoration:none;" onmouseover="this.style.borderColor='#FF0A0A'" onmouseout="this.style.borderColor='#e8e8e8'">
-    <div style="width:8px;height:8px;border-radius:50%;background:#FF0A0A;margin-top:4px;flex-shrink:0;"></div>
-    <div><div style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#0a0a0a;">Newsletter — Founders &amp; Investors</div><div style="font-family:'Sora',sans-serif;font-size:11px;color:#888;margin-top:2px;">Curated global venture events — weekly digest</div></div>
-  </a>
-  <a href="https://sitch.app/LinkList?s=5ufJ0cp" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid #e8e8e8;border-radius:8px;text-decoration:none;" onmouseover="this.style.borderColor='#FF0A0A'" onmouseout="this.style.borderColor='#e8e8e8'">
-    <div style="width:8px;height:8px;border-radius:50%;background:#0a0a0a;margin-top:4px;flex-shrink:0;"></div>
-    <div><div style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#0a0a0a;">Founders · Investors · Executives</div><div style="font-family:'Sora',sans-serif;font-size:11px;color:#888;margin-top:2px;">Raising or selling? Looking for deal flow or partnerships? Connect here</div></div>
-  </a>
-  <a href="https://forms.gle/vbwwtw9CaPCJhD4x9" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid #e8e8e8;border-radius:8px;text-decoration:none;" onmouseover="this.style.borderColor='#FF0A0A'" onmouseout="this.style.borderColor='#e8e8e8'">
-    <div style="width:8px;height:8px;border-radius:50%;background:#0a0a0a;margin-top:4px;flex-shrink:0;"></div>
-    <div><div style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#0a0a0a;">Partner &amp; Sponsor</div><div style="font-family:'Sora',sans-serif;font-size:11px;color:#888;margin-top:2px;">Work with us across events, conferences, newsletters, and the Yorkseed Passport Series</div></div>
-  </a>
-  <a href="https://forms.gle/vuHYgAYCskRZmyDR6" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid #e8e8e8;border-radius:8px;text-decoration:none;" onmouseover="this.style.borderColor='#FF0A0A'" onmouseout="this.style.borderColor='#e8e8e8'">
-    <div style="width:8px;height:8px;border-radius:50%;background:#0a0a0a;margin-top:4px;flex-shrink:0;"></div>
-    <div><div style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#0a0a0a;">Founder &amp; Investor Submission</div><div style="font-family:'Sora',sans-serif;font-size:11px;color:#888;margin-top:2px;">Fill out Yorkseed's Founder and Investor Submission Form</div></div>
-  </a>
-  <a href="https://lu.ma/b56cqfa7?ref=yorkseed" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid #e8e8e8;border-radius:8px;text-decoration:none;" onmouseover="this.style.borderColor='#FF0A0A'" onmouseout="this.style.borderColor='#e8e8e8'">
-    <div style="width:8px;height:8px;border-radius:50%;background:#FF0A0A;margin-top:4px;flex-shrink:0;"></div>
-    <div><div style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#0a0a0a;">Advertise in This Spreadsheet</div><div style="font-family:'Sora',sans-serif;font-size:11px;color:#888;margin-top:2px;">Put your logo and company in front of thousands of founders and investors</div></div>
-  </a>
-  <a href="http://anywaypay.link/pay/jsw" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid #e8e8e8;border-radius:8px;text-decoration:none;" onmouseover="this.style.borderColor='#FF0A0A'" onmouseout="this.style.borderColor='#e8e8e8'">
-    <div style="width:8px;height:8px;border-radius:50%;background:#C9A84C;margin-top:4px;flex-shrink:0;"></div>
-    <div><div style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#0a0a0a;">Support Yorkseed ♥</div><div style="font-family:'Sora',sans-serif;font-size:11px;color:#888;margin-top:2px;">If you appreciated our hard work, click here to donate</div></div>
-  </a>
-</div>
-```
-
+  <div style="max-width:900px;margin:0 auto;padding:24px 20px;">
+    <!-- FIX: 4 columns on desktop (minmax 200px), was 260px = 3 cols -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;">
+      <a href="https://luma.com/Yorkseed?ref=yorkseed" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid #e8e8e8;border-radius:8px;text-decoration:none;" onmouseover="this.style.borderColor='#FF0A0A'" onmouseout="this.style.borderColor='#e8e8e8'">
+        <div style="width:8px;height:8px;border-radius:50%;background:#FF0A0A;margin-top:4px;flex-shrink:0;"></div>
+        <div><div style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#0a0a0a;">Global Event Calendar</div><div style="font-family:'Sora',sans-serif;font-size:11px;color:#888;margin-top:2px;">Subscribe to curated venture events worldwide — weekly for founders &amp; investors</div></div>
+      </a>
+      <a href="https://yorkseed.co/#about?ref=yorkseed" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid #e8e8e8;border-radius:8px;text-decoration:none;" onmouseover="this.style.borderColor='#FF0A0A'" onmouseout="this.style.borderColor='#e8e8e8'">
+        <div style="width:8px;height:8px;border-radius:50%;background:#FF0A0A;margin-top:4px;flex-shrink:0;"></div>
+        <div><div style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#0a0a0a;">City &amp; Conference Hubs</div><div style="font-family:'Sora',sans-serif;font-size:11px;color:#888;margin-top:2px;">Apply to access 30+ local city hubs and conference hubs</div></div>
+      </a>
+      <a href="https://whatsapp.com/channel/0029Vaf0wiU3wtbBcxTEFD0h" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid #e8e8e8;border-radius:8px;text-decoration:none;" onmouseover="this.style.borderColor='#FF0A0A'" onmouseout="this.style.borderColor='#e8e8e8'">
+        <div style="width:8px;height:8px;border-radius:50%;background:#25D366;margin-top:4px;flex-shrink:0;"></div>
+        <div><div style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#0a0a0a;">WhatsApp Public Channel</div><div style="font-family:'Sora',sans-serif;font-size:11px;color:#888;margin-top:2px;">Follow Yorkseed's public channel for updates</div></div>
+      </a>
+      <a href="https://chat.whatsapp.com/LZJ8xFczveoJats028rGir" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid #e8e8e8;border-radius:8px;text-decoration:none;" onmouseover="this.style.borderColor='#FF0A0A'" onmouseout="this.style.borderColor='#e8e8e8'">
+        <div style="width:8px;height:8px;border-radius:50%;background:#25D366;margin-top:4px;flex-shrink:0;"></div>
+        <div><div style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#0a0a0a;">Yorkseed NYC Hub — NYFTW</div><div style="font-family:'Sora',sans-serif;font-size:11px;color:#888;margin-top:2px;">Join our NYC Hub, open as a conference hub for the week</div></div>
+      </a>
+      <a href="https://yorkseed.beehiiv.com/subscribe?ref=yorkseed" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid #e8e8e8;border-radius:8px;text-decoration:none;" onmouseover="this.style.borderColor='#FF0A0A'" onmouseout="this.style.borderColor='#e8e8e8'">
+        <div style="width:8px;height:8px;border-radius:50%;background:#FF0A0A;margin-top:4px;flex-shrink:0;"></div>
+        <div><div style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#0a0a0a;">Newsletter — Founders &amp; Investors</div><div style="font-family:'Sora',sans-serif;font-size:11px;color:#888;margin-top:2px;">Curated global venture events — weekly digest</div></div>
+      </a>
+      <a href="https://sitch.app/LinkList?s=5ufJ0cp" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid #e8e8e8;border-radius:8px;text-decoration:none;" onmouseover="this.style.borderColor='#FF0A0A'" onmouseout="this.style.borderColor='#e8e8e8'">
+        <div style="width:8px;height:8px;border-radius:50%;background:#0a0a0a;margin-top:4px;flex-shrink:0;"></div>
+        <div><div style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#0a0a0a;">Founders · Investors · Executives</div><div style="font-family:'Sora',sans-serif;font-size:11px;color:#888;margin-top:2px;">Raising or selling? Looking for deal flow or partnerships? Connect here</div></div>
+      </a>
+      <a href="https://forms.gle/vbwwtw9CaPCJhD4x9" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid #e8e8e8;border-radius:8px;text-decoration:none;" onmouseover="this.style.borderColor='#FF0A0A'" onmouseout="this.style.borderColor='#e8e8e8'">
+        <div style="width:8px;height:8px;border-radius:50%;background:#0a0a0a;margin-top:4px;flex-shrink:0;"></div>
+        <div><div style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#0a0a0a;">Partner &amp; Sponsor</div><div style="font-family:'Sora',sans-serif;font-size:11px;color:#888;margin-top:2px;">Work with us across events, conferences, newsletters, and the Yorkseed Passport Series</div></div>
+      </a>
+      <a href="https://forms.gle/vuHYgAYCskRZmyDR6" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid #e8e8e8;border-radius:8px;text-decoration:none;" onmouseover="this.style.borderColor='#FF0A0A'" onmouseout="this.style.borderColor='#e8e8e8'">
+        <div style="width:8px;height:8px;border-radius:50%;background:#0a0a0a;margin-top:4px;flex-shrink:0;"></div>
+        <div><div style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#0a0a0a;">Founder &amp; Investor Submission</div><div style="font-family:'Sora',sans-serif;font-size:11px;color:#888;margin-top:2px;">Fill out Yorkseed's Founder and Investor Submission Form</div></div>
+      </a>
+      <a href="https://lu.ma/b56cqfa7?ref=yorkseed" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid #e8e8e8;border-radius:8px;text-decoration:none;" onmouseover="this.style.borderColor='#FF0A0A'" onmouseout="this.style.borderColor='#e8e8e8'">
+        <div style="width:8px;height:8px;border-radius:50%;background:#FF0A0A;margin-top:4px;flex-shrink:0;"></div>
+        <div><div style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#0a0a0a;">Advertise in This Spreadsheet</div><div style="font-family:'Sora',sans-serif;font-size:11px;color:#888;margin-top:2px;">Put your logo and company in front of thousands of founders and investors</div></div>
+      </a>
+      <a href="http://anywaypay.link/pay/jsw" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid #e8e8e8;border-radius:8px;text-decoration:none;" onmouseover="this.style.borderColor='#FF0A0A'" onmouseout="this.style.borderColor='#e8e8e8'">
+        <div style="width:8px;height:8px;border-radius:50%;background:#C9A84C;margin-top:4px;flex-shrink:0;"></div>
+        <div><div style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#0a0a0a;">Support Yorkseed ♥</div><div style="font-family:'Sora',sans-serif;font-size:11px;color:#888;margin-top:2px;">If you appreciated our hard work, click here to donate</div></div>
+      </a>
+      <a href="https://tally.so/r/ODJeYk" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid #FF0A0A;border-radius:8px;text-decoration:none;background:#fff8f8;" onmouseover="this.style.background='#fff1f1'" onmouseout="this.style.background='#fff8f8'">
+        <div style="width:8px;height:8px;border-radius:50%;background:#FF0A0A;margin-top:4px;flex-shrink:0;"></div>
+        <div>
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:3px;">
+            <div style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#0a0a0a;">Strategic Partner — Milan · New York · Paris</div>
+            <span style="font-family:'Sora',sans-serif;font-size:9px;font-weight:700;color:#FF0A0A;background:#ffe0e0;padding:2px 6px;border-radius:4px;letter-spacing:0.05em;text-transform:uppercase;white-space:nowrap;">Limited</span>
+          </div>
+          <div style="font-family:'Sora',sans-serif;font-size:11px;color:#888;line-height:1.45;">Partner with Yorkseed across Milan AI Week, NY Tech Week &amp; VivaTech Paris — curated events, platform integration, and direct access to a vetted founder &amp; investor network</div>
+        </div>
+      </a>
+    </div>
   </div>
 </div>
 
 <div class="sticky-controls-wrap">
 <div class="controls">
   <div class="search-row">
-    <!-- Desktop submit btn only (mobile uses FAB) -->
     <button class="submit-btn" onclick="openModal('submit')">+ Submit Event</button>
     <div class="search-wrap">
       <span class="search-icon">⌕</span>
-      <!-- FIX 3: autocomplete=off prevents iOS quirks -->
       <input type="text" id="searchInput" placeholder="Search events, hosts, venues…" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
     </div>
     <div class="filter-chips">
@@ -755,7 +607,6 @@
   </div>
   <div class="day-tabs" id="dayTabs"></div>
 </div>
-
 <div class="stats-bar">
   <div class="stat">Showing <strong id="visibleCount">0</strong> events</div>
   <span class="stat-sep">·</span>
@@ -765,10 +616,9 @@
   <span class="stat-sep">·</span>
   <div class="stat">Free: <strong id="freeCount">0</strong></div>
   <span class="stat-sep">·</span>
-  <!-- FIX 1b: stats bar submit (visible on mobile too) -->
   <button class="submit-btn" onclick="openModal('submit')" style="background:var(--red);border-color:var(--red);font-size:11px;padding:4px 10px;flex-shrink:0;">+ Submit Event</button>
 </div>
-</div><!-- /sticky-controls-wrap -->
+</div>
 
 <div class="content" id="content">
   <div class="empty-state" id="emptyState">
@@ -782,18 +632,8 @@
 </div>
 
 <script>
-// ══════════════════════════════════════════════════════
-// YORKSEED SECURITY & BRAND PROTECTION v2.1
-// © 2023–2026 Yorkseed. All rights reserved.
-// Unauthorised copying, redistribution or resale prohibited.
-// contact: partnership@yorkseed.co
-// ══════════════════════════════════════════════════════
 (function() {
   'use strict';
-
-  // iframe buster removed
-
-  // 2. Console branding
   try {
     var _s1 = 'background:#FF0A0A;color:#fff;padding:8px 16px;font-size:15px;font-weight:700;border-radius:6px 6px 0 0;';
     var _s2 = 'background:#0a0a0a;color:#FF0A0A;padding:5px 16px;font-size:12px;font-weight:600;';
@@ -802,8 +642,6 @@
     console.log('%c © 2026 Yorkseed · nyftw.yorkseed.co ', _s2);
     console.log('%c Built by Jessica Sophia Wong · partnership@yorkseed.co · Unauthorised copying strictly prohibited ', _s3);
   } catch(_) {}
-
-  // 3. Copy attribution injection
   document.addEventListener('copy', function(e) {
     try {
       var sel = window.getSelection ? window.getSelection().toString() : '';
@@ -814,16 +652,12 @@
       }
     } catch(_) {}
   });
-
-  // 4. DOM fingerprint
   try {
     var m = document.createElement('meta');
     m.name = 'ys-origin';
     m.content = btoa('yorkseed:nyftw:2026:' + (navigator.language||'') + ':' + screen.width);
     document.head.appendChild(m);
   } catch(_) {}
-
-  // 5. Title + footer integrity guard
   setInterval(function() {
     if (document.title && !document.title.includes('Yorkseed')) {
       document.title = 'Yorkseed 2026 New York Fintech Week Master Side Event List';
@@ -833,21 +667,16 @@
       f.innerHTML = 'Curated by <strong>Yorkseed</strong> · 2026 NY Fintech Week · <a href="https://nyftw.yorkseed.co" target="_blank" rel="noopener" style="color:var(--red);text-decoration:none;">nyftw.yorkseed.co</a>';
     }
   }, 4000);
-
-  // 6. Frozen brand global
   Object.defineProperty(window, '__YORKSEED__', {
     value: Object.freeze({
-      product: 'NYFTW Master Side Event List',
-      year: 2026, author: 'Jessica Sophia Wong',
-      contact: 'partnership@yorkseed.co',
-      site: 'https://nyftw.yorkseed.co',
-      copyright: '© 2026 Yorkseed. All rights reserved.'
+      product: 'NYFTW Master Side Event List', year: 2026,
+      author: 'Jessica Sophia Wong', contact: 'partnership@yorkseed.co',
+      site: 'https://nyftw.yorkseed.co', copyright: '© 2026 Yorkseed. All rights reserved.'
     }),
     writable: false, configurable: false
   });
 })();
 
-// ─── EVENT DATA ──────────────────────────────────────────────────────────────
 const EVENTS = [
   { id:1, name:"Welcome to NY — Official NYFTW Kickoff Happy Hour", host:"FTW NYC / Fintech Is Femme", date:"2026-04-27", day:"Mon Apr 27", time:"6:00 PM", venue:"Magic Hour Rooftop", neighborhood:"Midtown", address:"485 7th Ave (Moxy Hotel), New York, NY", types:["fintech"], free:true, drinks:true, food:true, ticket:"Free (Approval Required)", notes:"Official NYFTW opening party in partnership with TAO Group. Magic Hour Rooftop is the official watering hole all week (Apr 27–30). Say 'New York Fintech Week' at the door. Empire State Building views.", rsvp:"https://luma.com/welcometonyftw26?ref=yorkseed", status:"Open" },
   { id:2, name:"ATSs and Off-Exchange Trading: Opportunities & Challenges 2026", host:"TabbFORUM", date:"2026-04-27", day:"Mon Apr 27", time:"11:30 AM", venue:"Metropolitan Club", neighborhood:"Midtown", address:"1 E 60th St, New York, NY", types:["fintech","conference"], free:false, drinks:true, food:true, ticket:"Paid", notes:"Annual symposium for buy-side, sell-side, ATSs, exchanges, and fintech on ATS innovation, tech trends, and regulatory impact.", rsvp:"https://www.eventbrite.com/e/atss-and-off-exchange-trading-opportunities-and-challenges-2026-tickets-1830419537109?ref=yorkseed", status:"Open" },
@@ -873,6 +702,7 @@ const EVENTS = [
   { id:22, name:"BrainStation NYC AI Meetup", host:"BrainStation", date:"2026-05-01", day:"Fri May 1", time:"6:30 PM", venue:"BrainStation NYC", neighborhood:"Midtown", address:"New York, NY", types:["ai","community"], free:true, drinks:true, food:false, ticket:"Free", notes:"BrainStation's monthly NYC AI community meetup.", rsvp:"https://brainstation.io/course/online/data-science?ref=yorkseed", status:"Open" },
   { id:23, name:"Verci Sunset Yacht Party", host:"Verci", date:"2026-05-01", day:"Fri May 1", time:"5:00 PM", venue:"Manhattan Yacht Pier", neighborhood:"Downtown Manhattan", address:"New York, NY", types:["community","fintech"], free:false, drinks:true, food:false, ticket:"$45", notes:"Sunset yacht party for the fintech/startup community closing NYFTW week. Limited tickets.", rsvp:"https://luma.com/verci?ref=yorkseed", status:"Open" },
   { id:24, name:"SEO Week — Ecosystem Day", host:"SEO Week", date:"2026-05-01", day:"Fri May 1", time:"9:00 AM", venue:"Center415", neighborhood:"Midtown", address:"415 5th Ave, New York, NY", types:["marketing","conference"], free:false, drinks:false, food:false, ticket:"Paid", notes:"Day 3 of SEO Week. Theme: Ecosystem.", rsvp:"https://luma.com/ykwfd34g?ref=yorkseed", status:"Open" },
+  { id:25, name:"Plaid Happy Hour", host:"Plaid", date:"2026-05-01", day:"Fri May 1", time:"5:00 PM", venue:"TBD", neighborhood:"Manhattan", address:"New York, NY", types:["fintech","community"], free:true, drinks:true, food:true, ticket:"Invite Only", notes:"Plaid's annual NYFTW closing drinks. Invite-only. Watch company socials for the link.", rsvp:"", status:"Invite Only" },
   { id:26, name:"SEO Week — Future Day", host:"SEO Week", date:"2026-05-02", day:"Sat May 2", time:"9:00 AM", venue:"Center415", neighborhood:"Midtown", address:"415 5th Ave, New York, NY", types:["marketing","conference"], free:false, drinks:false, food:false, ticket:"Paid", notes:"Day 4 (final) of SEO Week. Theme: Future of search and AI in SEO.", rsvp:"https://luma.com/ykwfd34g?ref=yorkseed", status:"Open" },
   { id:27, name:"SEO Week Afterparty: Algorhythms ft. The LOX & Method Man", host:"SEO Week", date:"2026-05-02", day:"Sat May 2", time:"9:00 PM", venue:"HK Hall", neighborhood:"Hell's Kitchen", address:"Hell's Kitchen, New York, NY", types:["marketing","community"], free:false, drinks:true, food:false, ticket:"Paid", notes:"SEO Week closing party. Live performance from The LOX & Method Man at HK Hall.", rsvp:"https://luma.com/ykwfd34g?ref=yorkseed", status:"Open" },
   { id:28, name:"AI Memory Breakfast", host:"Bond AI NYC", date:"2026-05-03", day:"Sun May 3", time:"9:00 AM", venue:"TBD Flatiron", neighborhood:"Flatiron", address:"New York, NY", types:["ai","community"], free:true, drinks:false, food:true, ticket:"Free (Waitlisted)", notes:"Bond AI NYC morning event on AI memory and agents. Sold out — join waitlist.", rsvp:"https://luma.com/genai-ny?ref=yorkseed", status:"Sold Out / Waitlist" },
@@ -883,7 +713,6 @@ const EVENTS = [
   { id:33, name:"AI Agent Conference NYC — Day 1", host:"AI Agent Conference", date:"2026-05-05", day:"Tue May 5", time:"9:00 AM", venue:"NY Hilton Midtown", neighborhood:"Midtown", address:"1335 6th Ave, New York, NY", types:["ai","conference"], free:false, drinks:false, food:false, ticket:"Paid", notes:"Major 2-day AI agents conference. 3 tracks: Agentic Enterprises, Agentic Engineering, Agentic Industries.", rsvp:"https://www.aiagentconference.com/new-york?ref=yorkseed", status:"Open" },
   { id:34, name:"Data Driven NYC #121", host:"FirstMark Capital / Matt Turck", date:"2026-04-28", day:"Tue Apr 28", time:"6:30 PM", venue:"FirstMark Capital Office", neighborhood:"Flatiron", address:"50 W 23rd St, 7th Floor, New York, NY", types:["ai","community"], free:true, drinks:true, food:false, ticket:"Free (Approval Required)", notes:"The biggest and longest-running data & AI meetup in the US since 2012. #121 features Ramp Labs and Estuary. Always sells out — RSVP early.", rsvp:"https://luma.com/ddnyc121?ref=yorkseed", status:"Approval Required" },
   { id:35, name:"Atlassian Enterprise AI Night", host:"Atlassian", date:"2026-04-28", day:"Tue Apr 28", time:"6:30 PM", venue:"Atlassian NYC Office", neighborhood:"Midtown", address:"New York, NY", types:["ai","community"], free:true, drinks:true, food:true, ticket:"Invite Only", notes:"Hosted by Atlassian. Enterprise AI focus. Food and drinks included.", rsvp:"", status:"Invite Only" },
-  { id:25, name:"Plaid Happy Hour", host:"Plaid", date:"2026-05-01", day:"Fri May 1", time:"5:00 PM", venue:"TBD", neighborhood:"Manhattan", address:"New York, NY", types:["fintech","community"], free:true, drinks:true, food:true, ticket:"Invite Only", notes:"Plaid's annual NYFTW closing drinks. Invite-only. Watch company socials for the link.", rsvp:"", status:"Invite Only" },
   { id:36, name:"Applied AI in Fintech Summit", host:"TBD", date:"2026-04-29", day:"Wed Apr 29", time:"10:00 AM", venue:"TBD", neighborhood:"Manhattan", address:"New York, NY", types:["fintech","ai"], free:false, drinks:false, food:false, ticket:"Paid", notes:"Focus on practical AI applications in financial services: trading, risk, fraud, and customer experience.", rsvp:"", status:"Open" },
   { id:37, name:"Verci x AppCap: App Builders Happy Hour", host:"Verci / AppCap", date:"2026-05-01", day:"Fri May 1", time:"6:00 PM", venue:"Verci Flatiron", neighborhood:"Flatiron", address:"New York, NY", types:["community","ai"], free:true, drinks:true, food:true, ticket:"Free (Approval Required)", notes:"191+ registered. Verci's curated space for founders and builders. AppCap co-hosting. Snacks and drinks included.", rsvp:"https://luma.com/fpi5zxok?ref=yorkseed", status:"Open" },
   { id:200, name:"Fintech/AI Startup Pitches and Investor Panels", host:"Wallet Max", date:"2026-04-20", day:"Sun Apr 20", time:"5:00 PM", venue:"Panel event", neighborhood:"Midtown", address:"New York, NY", types:["fintech","ai"], free:true, drinks:false, food:false, ticket:"Free", notes:"New York FinTech Week in April brings together an inclusive community of startup, investor, and corporate ecosystem builders.", rsvp:"https://luma.com/FintechPitchWM26?ref=yorkseed", status:"Open" },
@@ -970,16 +799,11 @@ const EVENTS = [
   { id:405, name:"Deep Tech/AI Startup Pitches and Investor Panels — #NYTechWeek", host:"Wallet Max", date:"2026-04-28", day:"Tue Apr 28", time:"5:00 PM", venue:"TBD", neighborhood:"Midtown", address:"New York, NY", types:["ai","vc"], free:false, drinks:false, food:false, ticket:"Paid", notes:"Deep Tech & AI startup pitch competition and investor panels during NY Tech Week.", rsvp:"https://www.eventbrite.com/e/deep-tech-ai-startup-pitches-investor-panels-nytechweek-event?ref=yorkseed", status:"Open" }
 ];
 
-// ─── STATE ───────────────────────────────────────────────────────────────────
-let activeType = 'all';
-let activeDay = 'all';
-let freeFilter = null;
-let searchTerm = '';
+let activeType = 'all', activeDay = 'all', freeFilter = null, searchTerm = '';
 let submittedEvents = [];
 try { const s = sessionStorage.getItem('ys_submitted'); if (s) submittedEvents = JSON.parse(s); } catch(e) {}
 function saveSubmitted() { try { sessionStorage.setItem('ys_submitted', JSON.stringify(submittedEvents)); } catch(e) {} }
 
-// ─── HELPERS ─────────────────────────────────────────────────────────────────
 function getTypeTags(types) {
   const map = { fintech:['tag-fintech','Fintech'], ai:['tag-ai','AI'], web3:['tag-web3','Web3'], vc:['tag-vc','VC'], women:['tag-women','Women'], marketing:['tag-marketing','Marketing'], community:['tag-community','Community'], conference:['tag-conference','Conference'], legal:['tag-legal','Legal'], workshop:['tag-workshop','Workshop'] };
   return types.map(t => map[t] ? `<span class="tag ${map[t][0]}">${map[t][1]}</span>` : '').join('');
@@ -1006,23 +830,18 @@ function matchesFilters(e) {
 }
 function allEvents() { return [...EVENTS, ...submittedEvents]; }
 
-// ─── RENDER ──────────────────────────────────────────────────────────────────
 function render() {
   const filtered = allEvents().filter(matchesFilters);
   const content = document.getElementById('content');
   const empty = document.getElementById('emptyState');
   document.querySelectorAll('.day-group').forEach(el => el.remove());
   empty.classList.toggle('visible', filtered.length === 0);
-
-  const groups = {};
-  const dayOrder = [];
+  const groups = {}, dayOrder = [];
   filtered.forEach(e => {
     if (!groups[e.date]) { groups[e.date] = []; dayOrder.push(e.date); }
     groups[e.date].push(e);
   });
-  // Sort days
   dayOrder.sort();
-
   dayOrder.forEach(date => {
     function timeToMinutes(t) {
       if (!t) return 9999;
@@ -1038,7 +857,6 @@ function render() {
     group.className = 'day-group';
     const dayDateStr = new Date(date + 'T00:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
     group.innerHTML = `<div class="day-header"><div class="day-label">${events[0].day}</div><div class="day-date">${dayDateStr.split(',')[0].toUpperCase()}</div><div class="day-event-count">${events.length} event${events.length !== 1 ? 's' : ''}</div></div>`;
-
     events.forEach(e => {
       const card = document.createElement('div');
       card.className = 'event-card';
@@ -1046,10 +864,8 @@ function render() {
       const rsvpBtn = e.rsvp
         ? `<a class="rsvp-btn" href="${e.rsvp}" target="_blank" rel="noopener">RSVP / Register ↗</a>`
         : `<span class="rsvp-btn disabled">Check Luma / Eventbrite</span>`;
-      // FIX 2: Update button per card — use data-rsvp to avoid quote-escaping crashes
       const safeRsvp = (e.rsvp || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;');
       const updateBtn = `<button class="update-event-btn" data-rsvp="${safeRsvp}" onclick="openUpdateForEvent(event,this.dataset.rsvp)">💡 Update info</button>`;
-
       card.innerHTML = `
         <div class="event-main">
           <div class="event-time-col"><div class="time">${e.time}</div></div>
@@ -1081,7 +897,6 @@ function render() {
     });
     content.insertBefore(group, empty);
   });
-
   const vis = allEvents().filter(matchesFilters);
   document.getElementById('visibleCount').textContent = vis.length;
   document.getElementById('drinksCount').textContent = vis.filter(e => e.drinks).length;
@@ -1104,30 +919,23 @@ function buildDayTabs() {
     tab.dataset.date = d.date;
     tab.innerHTML = `${d.label} <span class="count">${count}</span>`;
     tab.addEventListener('click', () => {
-  activeDay = d.date;
-  document.querySelectorAll('.day-tab').forEach(t => t.classList.remove('active'));
-  tab.classList.add('active');
-  render();
-  // Scroll content into view just below sticky controls
-  if (d.date !== 'all') {
-    requestAnimationFrame(() => {
-      const content = document.getElementById('content');
-      const stickyWrap = document.querySelector('.sticky-controls-wrap');
-      if (content && stickyWrap) {
-       const headerHeight = document.querySelector('.header').offsetHeight;
-const stickyHeight = document.querySelector('.sticky-controls-wrap').offsetHeight;
-
-const offset = headerHeight + stickyHeight + 12;
-const contentTop = content.getBoundingClientRect().top + window.scrollY;
-
-window.scrollTo({
-  top: Math.max(contentTop - offset, 0),
-  behavior: 'smooth'
-});
+      activeDay = d.date;
+      document.querySelectorAll('.day-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      render();
+      if (d.date !== 'all') {
+        requestAnimationFrame(() => {
+          const content = document.getElementById('content');
+          const header = document.querySelector('.header');
+          const stickyWrap = document.querySelector('.sticky-controls-wrap');
+          if (content && header && stickyWrap) {
+            const offset = header.offsetHeight + stickyWrap.offsetHeight + 12;
+            const contentTop = content.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({ top: Math.max(contentTop - offset, 0), behavior: 'smooth' });
+          }
+        });
       }
     });
-  }
-});
     tabs.appendChild(tab);
   });
 }
@@ -1149,17 +957,14 @@ document.querySelectorAll('.filter-chip[data-free]').forEach(chip => {
   });
 });
 document.getElementById('searchInput').addEventListener('input', function() { searchTerm = this.value.trim(); render(); });
-
 buildDayTabs();
 render();
 document.getElementById('headerCount').textContent = allEvents().length + ' events';
 
-// ─── EMAIL GATE ───────────────────────────────────────────────────────────────
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxqkBNYR-pvmWfV_rOAJx-aCssAwqryX9XOULDcfH4Fh1iXJTbd7JTDfNK8qneFUGrJrA/exec";
 const GATE_TRIGGER = 3;
 let eventOpenCount = 0, gateShown = false, gateCleared = false;
 try { if (localStorage.getItem('ys_gate_cleared') === '1') gateCleared = true; } catch(e) {}
-
 function trackEventOpen() {
   if (gateCleared || gateShown) return;
   eventOpenCount++;
@@ -1186,9 +991,7 @@ async function submitGateEmail() {
   setTimeout(closeGate, 2000);
 }
 
-// ─── SUBMIT / UPDATE MODAL ───────────────────────────────────────────────────
 function updateHeaderCount() { document.getElementById('headerCount').textContent = allEvents().length + ' events'; }
-
 function openModal(tab) {
   document.getElementById('modalOverlay').classList.add('open');
   switchTab(tab || 'submit');
@@ -1197,7 +1000,6 @@ function openModal(tab) {
   document.getElementById('formUpdate').style.display = 'none';
 }
 function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); resetForms(); }
-
 function switchTab(tab) {
   document.getElementById('tab-submit').classList.toggle('active', tab === 'submit');
   document.getElementById('tab-update').classList.toggle('active', tab === 'update');
@@ -1216,8 +1018,6 @@ function resetForms() {
   const uf = document.getElementById('upd-fields'); if(uf) uf.style.display='none';
   const ul = document.getElementById('upd-found-label'); if(ul) ul.textContent='';
 }
-
-// FIX 2: Open update modal pre-filled with event RSVP
 function openUpdateForEvent(ev, rsvpLink) {
   if (ev) ev.stopPropagation();
   openModal('update');
@@ -1228,8 +1028,6 @@ function openUpdateForEvent(ev, rsvpLink) {
   const modal = document.querySelector('.modal');
   if (modal) setTimeout(() => modal.scrollTop = 0, 50);
 }
-
-// Duplicate detection
 function normalize(str) { return (str||'').toLowerCase().replace(/[^a-z0-9\s]/g,'').replace(/\s+/g,' ').trim(); }
 function similarity(a,b) {
   a=normalize(a); b=normalize(b); if(!a||!b) return 0;
@@ -1263,9 +1061,7 @@ function scheduleVerify() {
     catch(e){badge.className='verify-badge invalid';badge.textContent='⚠ Could not verify';}
   },800);
 }
-
 function dayLabelFromISO(iso){const map={'2026-04-20':'Sun Apr 20','2026-04-24':'Fri Apr 24','2026-04-27':'Mon Apr 27','2026-04-28':'Tue Apr 28','2026-04-29':'Wed Apr 29','2026-04-30':'Thu Apr 30','2026-05-01':'Fri May 1','2026-05-02':'Sat May 2','2026-05-03':'Sun May 3','2026-05-04':'Mon May 4','2026-05-05':'Tue May 5'};return map[iso]||iso;}
-
 function submitEvent() {
   const name=document.getElementById('sub-name').value.trim(), date=document.getElementById('sub-date').value,
     time=document.getElementById('sub-time').value.trim()||'TBD', host=document.getElementById('sub-host').value.trim(),
@@ -1284,7 +1080,6 @@ function submitEvent() {
   const newEvent={id:9000+submittedEvents.length+1,name,host,date,day:dayLabelFromISO(date),time,venue,neighborhood,address:'New York, NY',types:[type],free:ticket==='Free',drinks,food,ticket,notes,rsvp:rsvp.includes('?')?rsvp+'&ref=yorkseed':rsvp+'?ref=yorkseed',status:'Open',submitted:true};
   submittedEvents.push(newEvent);saveSubmitted();showSuccess('added');render();updateHeaderCount();
 }
-
 let updTargetEvent=null;
 function findEventByRsvp() {
   const rsvp=document.getElementById('upd-rsvp').value.trim(), label=document.getElementById('upd-found-label'), fields=document.getElementById('upd-fields');
@@ -1309,7 +1104,6 @@ async function submitUpdate() {
   btn.disabled=false; btn.textContent='Apply Update';
   showSuccess('updated'); render();
 }
-
 function showSuccess(type) {
   const icon=document.getElementById('successIcon'), title=document.getElementById('successTitle'), msg=document.getElementById('successMsg');
   if(type==='added'){icon.textContent='✅';title.textContent='Event Added!';msg.textContent='Your event has been added to the list and is now visible to everyone.';}
@@ -1320,30 +1114,19 @@ function showSuccess(type) {
   document.getElementById('formUpdate').style.display='none';
   document.getElementById('successState').classList.add('show');
 }
-
-// Fix sticky controls top to match exact header height
 (function() {
   function fixStickyTop() {
     const header = document.querySelector('.header');
     if (!header) return;
-
-    document.documentElement.style.setProperty(
-      '--header-height',
-      header.offsetHeight + 'px'
-    );
+    document.documentElement.style.setProperty('--header-height', header.offsetHeight + 'px');
   }
-
   fixStickyTop();
-
   window.addEventListener('resize', fixStickyTop);
-  window.addEventListener('orientationchange', () => {
-    setTimeout(fixStickyTop, 250);
-  });
+  window.addEventListener('orientationchange', () => setTimeout(fixStickyTop, 250));
 })();
 </script>
 
 <!-- SUBMIT / UPDATE MODAL -->
-
 <div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeModal()">
   <div class="modal">
     <div class="modal-header">
@@ -1391,7 +1174,6 @@ function showSuccess(type) {
         <button class="form-submit" id="submitBtn" onclick="submitEvent()">Add Event to List</button>
       </div>
       <div id="formUpdate" style="display:none;">
-        <!-- FIX 2: Public update notice -->
         <div class="public-update-notice">💡 <strong>Anyone can update event info</strong> — changes go live immediately. Use this to correct times, venues, hosts, or add notes if something changed.</div>
         <div class="modal-notice">Paste the RSVP link of the event you want to update. We'll find the matching event and apply your changes instantly.</div>
         <div class="form-group">
@@ -1416,7 +1198,6 @@ function showSuccess(type) {
 </div>
 
 <!-- EMAIL GATE -->
-
 <div class="email-gate-overlay" id="emailGateOverlay">
   <div class="email-gate-box">
     <div class="email-gate-logo">Yorkseed</div>
@@ -1435,78 +1216,27 @@ function showSuccess(type) {
     </div>
   </div>
 </div>
-<!-- LIVE VIEWER TRACKER — Supabase Realtime Presence -->
-<!--
-  ═══════════════════════════════════════════════════════
-  SETUP (one-time, ~2 minutes):
-  1. Go to https://supabase.com and create a FREE project
-  2. In your project dashboard → Settings → API
-  3. Copy "Project URL" → paste into SUPABASE_URL below
-  4. Copy "anon / public" key → paste into SUPABASE_ANON_KEY below
-  5. In Supabase dashboard → Realtime → make sure it is ENABLED
-  That's it — no database tables needed, presence works out of the box.
-  ═══════════════════════════════════════════════════════
--->
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
 (function () {
-
-// ── PASTE YOUR CREDENTIALS HERE ──────────────────────
-const SUPABASE_URL      = ‘https://oborlogkzvfcrowezgcb.supabase.co’;
-const SUPABASE_ANON_KEY = ‘sb_publishable_ko18CKHHoAarlOfXDc2dkA_UzFQrW3W’;
-// ─────────────────────────────────────────────────────
-
-const pill    = document.getElementById(‘liveViewersPill’);
-const countEl = document.getElementById(‘liveViewerCount’);
-
-function setCount(n) {
-if (!pill || !countEl) return;
-countEl.textContent = n;
-pill.style.display  = ‘inline-flex’;
-}
-
-// Show “1 online” immediately while connecting
-setCount(1);
-
-// If credentials not filled in yet, show nothing
-if (SUPABASE_URL === ‘YOUR_SUPABASE_URL’) {
-console.info(’[LiveViewers] Add your Supabase credentials to enable the live counter.’);
-return;
-}
-
-try {
-const client  = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-const myId    = crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2);
-const channel = client.channel(‘yorkseed-nyftw-live’, {
-config: { presence: { key: myId } }
-});
-
-```
-channel
-  .on('presence', { event: 'sync' }, () => {
-    const state = channel.presenceState();
-    setCount(Object.keys(state).length);
-  })
-  .subscribe(async (status) => {
-    if (status === 'SUBSCRIBED') {
-      await channel.track({ joined_at: Date.now() });
-    }
-  });
-
-// Clean up when tab closes
-window.addEventListener('beforeunload', () => {
-  channel.untrack();
-});
-```
-
-} catch (err) {
-console.warn(’[LiveViewers] Could not connect:’, err);
-// Fallback: show “1 online” so the pill is always visible
-setCount(1);
-}
-
+  const SUPABASE_URL      = 'https://oborlogkzvfcrowezgcb.supabase.co';
+  const SUPABASE_ANON_KEY = 'sb_publishable_ko18CKHHoAarlOfXDc2dkA_UzFQrW3W';
+  const pill    = document.getElementById('liveViewersPill');
+  const countEl = document.getElementById('liveViewerCount');
+  function setCount(n) { if (!pill || !countEl) return; countEl.textContent = n; pill.style.display = 'inline-flex'; }
+  setCount(1);
+  if (SUPABASE_URL === 'YOUR_SUPABASE_URL') { console.info('[LiveViewers] Add your Supabase credentials to enable the live counter.'); return; }
+  try {
+    const client  = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const myId    = crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2);
+    const channel = client.channel('yorkseed-nyftw-live', { config: { presence: { key: myId } } });
+    channel
+      .on('presence', { event: 'sync' }, () => { const state = channel.presenceState(); setCount(Object.keys(state).length); })
+      .subscribe(async (status) => { if (status === 'SUBSCRIBED') { await channel.track({ joined_at: Date.now() }); } });
+    window.addEventListener('beforeunload', () => { channel.untrack(); });
+  } catch (err) { console.warn('[LiveViewers] Could not connect:', err); setCount(1); }
 })();
 </script>
-
 </body>
 </html>
