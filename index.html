@@ -460,6 +460,7 @@
     /* FIX 1: hide join btn but NOT submit btn */
     .header-right .join-btn { display: none !important; }
     .event-count-pill { font-size: 10px; padding: 3px 8px; }
+    .live-viewers-pill { display: inline-flex !important; font-size: 10px; padding: 3px 8px; gap: 4px; }
 
     /* Hero */
     .hero { padding: 18px 14px 20px; }
@@ -599,14 +600,14 @@
   <text x="10" y="20" font-family="Arial Black,Arial,sans-serif" font-size="15" font-weight="900" fill="white" letter-spacing="0.5">YORKSEED</text>
 </svg>
     <div style="margin-left:14px;">
-      <div style="color:white;font-family:'Sora',sans-serif;font-size:15px;font-weight:700;letter-spacing:0.01em;line-height:1.25;">New York Fintech Week</div>
-      <div style="color:var(--red);font-family:'Sora',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;margin-top:3px;">2026 Master Side Event List</div>
+      <div style="color:white;font-family:'Sora',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.01em;line-height:1.25;">New York Fintech Week</div>
+      <div style="color:var(--red);font-family:'Sora',sans-serif;font-size:9.5px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;margin-top:3px;">2026 Master Side Event List</div>
     </div>
   </div>
   <div class="header-right">
     <!-- join-btn class added so mobile CSS can hide it without hiding everything -->
     <a href="https://app.yorkseed.co?ref=yorkseed" target="_blank" rel="noopener" class="join-btn" style="display:inline-flex;align-items:center;gap:6px;background:var(--red);color:white;font-family:'Sora',sans-serif;font-size:11px;font-weight:600;padding:7px 14px;border-radius:6px;text-decoration:none;letter-spacing:0.02em;white-space:nowrap;">Join Yorkseed Connect ↗</a>
-    <div class="live-viewers-pill" id="liveViewersPill" style="display:none;">
+    <div class="live-viewers-pill" id="liveViewersPill" style="display:inline-flex;">
       <span class="live-dot"></span>
       <span id="liveViewerCount">1</span> online
     </div>
@@ -1464,6 +1465,9 @@ countEl.textContent = n;
 pill.style.display  = ‘inline-flex’;
 }
 
+// Show “1 online” immediately while connecting
+setCount(1);
+
 // If credentials not filled in yet, show nothing
 if (SUPABASE_URL === ‘YOUR_SUPABASE_URL’) {
 console.info(’[LiveViewers] Add your Supabase credentials to enable the live counter.’);
@@ -1497,6 +1501,8 @@ window.addEventListener('beforeunload', () => {
 
 } catch (err) {
 console.warn(’[LiveViewers] Could not connect:’, err);
+// Fallback: show “1 online” so the pill is always visible
+setCount(1);
 }
 
 })();
