@@ -1234,7 +1234,19 @@ function showSuccess(type) {
     channel
       .on('presence', { event: 'sync' }, () => { const state = channel.presenceState(); setCount(Object.keys(state).length); })
       .subscribe(async (status) => { if (status === 'SUBSCRIBED') { await channel.track({ joined_at: Date.now() }); } });
+    // Mobile: visibilitychange is more reliable than beforeunload on iOS/Android
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') {
+        channel.untrack();
+      } else if (document.visibilityState === 'visible') {
+        // Re-track when tab comes back into focus
+        channel.track({ joined_at: Date.now() });
+      }
+    });
+    // Keep beforeunload as fallback for desktop
     window.addEventListener('beforeunload', () => { channel.untrack(); });
+    // Pagehide fires on iOS when page is cached (beforeunload often doesn't)
+    window.addEventListener('pagehide', () => { channel.untrack(); });
   } catch (err) { console.warn('[LiveViewers] Could not connect:', err); setCount(1); }
 })();
 </script>
