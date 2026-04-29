@@ -715,7 +715,6 @@ const EVENTS = [
   { id:31, name:"Women Who Code — NYTW Hackathon", host:"Women Who Code NYC", date:"2026-06-05", day:"Thu Jun 5", time:"9:00 AM", venue:"TBD — Manhattan", neighborhood:"Manhattan", address:"New York, NY", types:["ai","women","hackathon","community"], free:true, drinks:false, food:true, ticket:"Free", notes:"Day-long hackathon for women in tech during NYTW. AI, social impact, and fintech tracks.", rsvp:"https://www.womenwhocode.com/?ref=yorkseed", status:"Open" },
   { id:182, name:"Vibe Code Hackathon — Women Builders Edition", host:"Products by Women, Geeks & Experts", date:"2026-06-06", day:"Fri Jun 6", time:"10:00 AM", venue:"TBD — Chelsea", neighborhood:"Chelsea", address:"New York, NY", types:["ai","hackathon","women"], free:false, drinks:false, food:true, ticket:"Application Required", notes:"Hackathon for women builders focused on vibe coding and AI-native product development.", rsvp:"https://www.tech-week.com/calendar/nyc/tracks/hackathons?ref=yorkseed", status:"Open" },
   { id:190, name:"Saturday Startup Brunch — Post NYTW", host:"Independent", date:"2026-06-07", day:"Sat Jun 7", time:"11:00 AM", venue:"TBD Restaurant — SoHo", neighborhood:"SoHo", address:"New York, NY", types:["community","vc","breakfast"], free:false, drinks:true, food:true, ticket:"Paid", notes:"End-of-week brunch for founders and investors to decompress after NYTW.", rsvp:"https://lu.ma/nyc?ref=yorkseed", status:"Open" },
-  { id:39, name:"Yorkseed Passport Series: NYTW — Post-Week Debrief Brunch", host:"Yorkseed", date:"2026-06-08", day:"Sun Jun 8", time:"11:30 AM", venue:"TBD — Brooklyn or Lower Manhattan", neighborhood:"Brooklyn / Lower Manhattan", address:"New York, NY", types:["community","vc","breakfast"], free:false, drinks:true, food:true, ticket:"Paid", yorkseed:"passport", notes:"The final Yorkseed Passport Series event — a relaxed post-NYTW debrief brunch.", rsvp:"https://lu.ma/yorkseed?ref=yorkseed", status:"Open" },
 ];
 
 // deduplicate by id
@@ -1204,29 +1203,41 @@ function showSuccess(type) {
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
 (function () {
-  const SUPABASE_URL      = 'https://vdjfrloafzgedcancpbu.supabase.co';
-  const SUPABASE_ANON_KEY = 'sb_publishable_ItKE3fIryE40gRUJu36JGw_4qDw9lbm';
   const pill    = document.getElementById('liveViewersPill');
   const countEl = document.getElementById('liveViewerCount');
   function setCount(n) { if (!pill || !countEl) return; countEl.textContent = n; pill.style.display = 'inline-flex'; }
   setCount(1);
   try {
-    const client  = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    const myId    = crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2);
-    const channel = client.channel('yorkseed-nytw-2026', { config: { presence: { key: myId } } });
-    channel
-      .on('presence', { event: 'sync' }, () => { const state = channel.presenceState(); setCount(Math.max(Object.keys(state).length, 1)); })
-      .subscribe(async (status) => { if (status === 'SUBSCRIBED') { await channel.track({ joined_at: Date.now() }); } });
-    document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === 'hidden') channel.untrack();
-      else channel.track({ joined_at: Date.now() });
-    });
-    window.addEventListener('beforeunload', () => { channel.untrack(); });
-    window.addEventListener('pagehide', () => { channel.untrack(); });
-  } catch (err) { setCount(1); }
+    if (typeof WebSocket === 'undefined' || window.isSecureContext === false) return;
+  } catch(e) { return; }
+  const SUPABASE_URL      = 'https://vdjfrloafzgedcancpbu.supabase.co';
+  const SUPABASE_ANON_KEY = 'sb_publishable_ItKE3fIryE40gRUJu36JGw_4qDw9lbm';
+  function initPresence() {
+    try {
+      const client  = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      const myId    = crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2);
+      const channel = client.channel('yorkseed-nytw-2026', { config: { presence: { key: myId } } });
+      channel
+        .on('presence', { event: 'sync' }, () => { setCount(Math.max(Object.keys(channel.presenceState()).length, 1)); })
+        .subscribe(async (status) => {
+          if (status === 'SUBSCRIBED') { await channel.track({ joined_at: Date.now(), id: myId }); setTimeout(() => setCount(Math.max(Object.keys(channel.presenceState()).length, 1)), 800); }
+          if (status === 'CHANNEL_ERROR' || status === 'TIMED_OUT') setCount(1);
+        });
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden') channel.untrack();
+        else channel.track({ joined_at: Date.now(), id: myId });
+      });
+      window.addEventListener('beforeunload', () => channel.untrack());
+      window.addEventListener('pagehide', () => channel.untrack());
+    } catch(err) { setCount(1); }
+  }
+  const s = document.createElement('script');
+  s.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
+  s.onload  = initPresence;
+  s.onerror = () => setCount(1);
+  document.head.appendChild(s);
 })();
 </script>
 </body>
